@@ -2,32 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+
+.hamburger{
+    transform: scale(0.8);
+    z-index: 1;
+    position: relative;
+    
+   
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+.background:after{
+    content: '';
+    display:block;
+    height:100vh;
+    width: 750px;
+    -webkit-transform: skew(-30deg, 0deg);
+    background: #e00303;
+    left: 850px;
+    position:absolute;
+    z-index: -1;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.content-container{
+    display: flex;
+    justify-content: space-between;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.login-container{
+    display: flex;
+    width: 30%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 45px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px
+}
+
+.userName{
+    margin-bottom: 15px;
+}
+
+.userName, .password{
+    border: 1px solid rgb(156, 156, 156);
+    width: 500px;
+    height: 45px;
+    padding: 10px;
+}
+
+
+h2{
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow:
+      2px 2px 0 #ef0404,
+      -2px 2px 0 #ef0404,
+      -2px -2px 0 #ef0404,
+      2px -2px 0 #ef0404;
+    letter-spacing: 3px;
+}
+
+.login-button{
+    background-color: #e00303;
+    color: whitesmoke;
+    width: 175px;
+    padding: 7px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
 }
